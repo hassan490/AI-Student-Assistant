@@ -1,4 +1,5 @@
 /* General reset */
+/* General reset */
 * {
     margin: 0;
     padding: 0;
@@ -25,18 +26,18 @@ body.light-mode {
     height: 100vh;
     padding: 20px;
     gap: 20px;
+    flex-direction: column; /* Change to column direction */
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .container {
-        flex-direction: column;
-        padding: 10px;
+        flex-direction: row; /* Change to row direction for larger screens */
     }
 }
 
 /* Sidebar */
 .sidebar {
-    width: 240px;
+    width: 100%; /* Full width on mobile */
     background-color: #162447;
     color: #fff;
     padding: 20px;
@@ -53,10 +54,9 @@ body.light-mode .sidebar {
     color: #333;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .sidebar {
-        width: 100%;
-        padding: 10px;
+        width: 240px; /* Fixed width for larger screens */
     }
 }
 
@@ -162,12 +162,6 @@ body.light-mode .main-content {
     color: #333;
 }
 
-@media (max-width: 768px) {
-    .main-content {
-        padding: 20px;
-    }
-}
-
 /* Top Section */
 .top-section {
     display: flex;
@@ -186,12 +180,13 @@ body.light-mode .top-section {
 @media (max-width: 768px) {
     .top-section {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
     .top-text {
         margin-left: 0;
         margin-top: 10px;
         font-size: 18px;
+        text-align: center;
     }
 }
 
@@ -219,8 +214,8 @@ body.light-mode .top-text {
 
 /* Chat Section */
 .chat-box {
-    height: 50px;
     display: flex;
+    flex-direction: column;
     background-color: #4f6d90;
     color: #fff;
     border-radius: 11px;
@@ -237,17 +232,15 @@ body.light-mode .chat-box {
     border: 1px solid #ccc;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .chat-box {
-        flex-direction: column;
-    }
-    .chat-input {
-        margin-bottom: 10px;
+        flex-direction: row;
     }
 }
 
 .chat-input {
     flex: 1;
+    width: 100%;
     padding: 10px;
     font-size: 16px;
     background-color: #0f3460;
