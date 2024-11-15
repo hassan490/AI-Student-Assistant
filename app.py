@@ -1,7 +1,6 @@
 import random
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
-from textblob import TextBlob
 import re
 
 # Function to correct spelling and handle missing spaces
