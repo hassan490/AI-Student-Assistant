@@ -1,4 +1,4 @@
-﻿/* General reset */
+/* General reset */
 * {
     margin: 0;
     padding: 0;
@@ -27,6 +27,13 @@ body.light-mode {
     gap: 20px;
 }
 
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+}
+
 /* Sidebar */
 .sidebar {
     width: 240px;
@@ -44,6 +51,13 @@ body.light-mode {
 body.light-mode .sidebar {
     background-color: #e0e0e0;
     color: #333;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+    }
 }
 
 /* Menu Styles */
@@ -148,6 +162,12 @@ body.light-mode .main-content {
     color: #333;
 }
 
+@media (max-width: 768px) {
+    .main-content {
+        padding: 20px;
+    }
+}
+
 /* Top Section */
 .top-section {
     display: flex;
@@ -163,8 +183,17 @@ body.light-mode .top-section {
     background-color: #ddd;
 }
 
-
-
+@media (max-width: 768px) {
+    .top-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .top-text {
+        margin-left: 0;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+}
 
 .top-text {
     margin-left: 20px;
@@ -177,19 +206,16 @@ body.light-mode .top-text {
 }
 
 .circular-image {
-    width: 70px; /* Adjust the size as needed */
-    height: 70px; /* Adjust the size as needed */
-    border-radius: 50%; /* This makes the image circular */
-    object-fit: cover; /* Ensures the image covers the entire container */
-    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 .circular-image:hover {
-    transform: scale(1.2); /* Increase size by 20% on hover */
+    transform: scale(1.2);
 }
-
-
-
 
 /* Chat Section */
 .chat-box {
@@ -211,6 +237,15 @@ body.light-mode .chat-box {
     border: 1px solid #ccc;
 }
 
+@media (max-width: 768px) {
+    .chat-box {
+        flex-direction: column;
+    }
+    .chat-input {
+        margin-bottom: 10px;
+    }
+}
+
 .chat-input {
     flex: 1;
     padding: 10px;
@@ -221,14 +256,14 @@ body.light-mode .chat-box {
     border-radius: 8px;
     outline: none;
     border-right: 0.5px solid #162447;
-    margin-right: 10px; /* Added margin */
+    margin-right: 10px;
 }
 
 body.light-mode .chat-input {
     background-color: #fff;
     color: #333;
     border-right: 1px solid #ccc;
-    margin-right: 10px; /* Added margin */
+    margin-right: 10px;
 }
 
 .send-button {
@@ -255,13 +290,13 @@ body.light-mode .send-button {
 .voice-button {
     background-color: #0f3460;
     color: #fff;
-    padding: 0 12px; /* Increase size */
+    padding: 0 12px;
     border: none;
     cursor: pointer;
-    border-radius: 8px 8px 8px 8px; /* Square button */
+    border-radius: 8px;
     transition: transform 0.2s ease;
     margin-left: 10px;
-    height: 100%; /* Match height of the input */
+    height: 100%;
 }
 
 body.light-mode .voice-button {
@@ -308,17 +343,35 @@ body.light-mode .bot-message {
     background-color: #ddd;
     color: #333;
 }
-/* Style for links within bot messages */
+
 .bot-message a {
-    color: #e43f5a; /* Custom link color */
-    text-decoration: none; /* Optional: Remove underline */
+    color: #e43f5a;
+    text-decoration: none;
 }
 
 .bot-message a:hover {
-    text-decoration: underline; /* Optional: Add underline on hover */
+    text-decoration: underline;
 }
 
-/* Add your existing styles here */
+#readAloudButton {
+    background-color: #0f3460;
+    color: white;
+    border: none;
+    padding: 11.75px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+body.light-mode #readAloudButton {
+    background-color: #00000074;
+    color: #fff;
+}
 
 #readAloudButton {
     background-color: #0f3460;
